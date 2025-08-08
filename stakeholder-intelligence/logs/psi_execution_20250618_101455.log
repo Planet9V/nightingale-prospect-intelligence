@@ -1,0 +1,21 @@
+2025-06-18 10:14:55,704 - PSIOrchestrator - INFO - Starting PSI processing
+2025-06-18 10:14:55,705 - BatchManager - INFO - Created batch: PSI-2025-06-18-004
+2025-06-18 10:14:55,705 - PSIOrchestrator - INFO - Created batch: PSI-2025-06-18-004
+2025-06-18 10:14:55,706 - PSIOrchestrator - INFO - Found 133 prospects to process
+2025-06-18 10:14:55,706 - PSIOrchestrator - INFO - Processing batch 1
+2025-06-18 10:14:55,734 - PSIOrchestrator - INFO - Processing batch 2
+2025-06-18 10:14:55,760 - PSIOrchestrator - INFO - Processing batch 3
+2025-06-18 10:14:55,784 - PSIOrchestrator - INFO - Processing batch 4
+2025-06-18 10:14:55,808 - PSIOrchestrator - INFO - Processing batch 5
+2025-06-18 10:14:55,825 - PSIOrchestrator - INFO - Processing batch 6
+2025-06-18 10:14:55,841 - PSIOrchestrator - INFO - Processing batch 7
+2025-06-18 10:14:55,858 - PSIOrchestrator - INFO - Processing batch 8
+2025-06-18 10:14:55,887 - PSIOrchestrator - INFO - Processing batch 9
+2025-06-18 10:14:55,907 - PSIOrchestrator - INFO - Processing batch 10
+2025-06-18 10:14:55,934 - PSIOrchestrator - INFO - Processing batch 11
+2025-06-18 10:14:55,963 - PSIOrchestrator - INFO - Processing batch 12
+2025-06-18 10:14:55,986 - PSIOrchestrator - INFO - Processing batch 13
+2025-06-18 10:14:55,998 - PSIOrchestrator - INFO - Processing batch 14
+2025-06-18 10:14:56,236 - OutputGenerator - INFO - Excel file created: /root/Desktop/project_nightingale_workspace/project_nightingale/1_Capabilities/Prospect_Stakeholder/outputs/PSI_output_v1.0_20250618_101456.xlsx
+2025-06-18 10:14:56,243 - OutputGenerator - INFO - CSV file created: /root/Desktop/project_nightingale_workspace/project_nightingale/1_Capabilities/Prospect_Stakeholder/outputs/PSI_output_v1.0_20250618_101456.csv
+2025-06-18 10:14:56,243 - PSIOrchestrator - INFO - Processing complete. Output: /root/Desktop/project_nightingale_workspace/project_nightingale/1_Capabilities/Prospect_Stakeholder/outputs/PSI_output_v1.0_20250618_101456.xlsx

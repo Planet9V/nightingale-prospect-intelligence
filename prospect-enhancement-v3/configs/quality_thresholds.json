@@ -1,0 +1,212 @@
+{
+  "quality_thresholds": {
+    "minimum_acceptable_score": 8.5,
+    "target_score": 9.5,
+    "excellence_score": 10.0,
+    "automatic_fail_score": 7.0
+  },
+  
+  "data_point_requirements": {
+    "organization_foundation": {
+      "minimum": 150,
+      "target": 175,
+      "excellent": 200
+    },
+    "strategic_context": {
+      "minimum": 150,
+      "target": 175,
+      "excellent": 200
+    },
+    "technical_infrastructure": {
+      "minimum": 175,
+      "target": 200,
+      "excellent": 225
+    },
+    "security_intelligence": {
+      "minimum": 200,
+      "target": 225,
+      "excellent": 250
+    },
+    "vendor_ecosystem": {
+      "minimum": 150,
+      "target": 175,
+      "excellent": 200
+    },
+    "business_initiatives": {
+      "minimum": 175,
+      "target": 200,
+      "excellent": 225
+    },
+    "engagement_strategy": {
+      "minimum": 200,
+      "target": 225,
+      "excellent": 250
+    }
+  },
+  
+  "quality_scoring_weights": {
+    "completeness": 0.25,
+    "specificity": 0.25,
+    "currency": 0.20,
+    "relevance": 0.20,
+    "actionability": 0.10
+  },
+  
+  "currency_requirements": {
+    "financial_data_max_days": 365,
+    "leadership_data_max_days": 180,
+    "news_max_days": 90,
+    "security_incidents_max_days": 730,
+    "technology_stack_max_days": 180,
+    "preferred_recency_days": 90
+  },
+  
+  "template_detection": {
+    "max_allowed_templates": 0,
+    "warning_threshold": 0,
+    "patterns": [
+      "\\[.*?\\]",
+      "\\{.*?\\}",
+      "<<.*?>>",
+      "Company Name",
+      "COMPANY_NAME",
+      "[Cc]ompany [Nn]ame",
+      "\\bTBD\\b",
+      "\\bTBA\\b",
+      "To be determined",
+      "To be added",
+      "Information pending",
+      "Details forthcoming",
+      "\\[REDACTED\\]",
+      "\\[CONFIDENTIAL\\]"
+    ],
+    "generic_phrases": [
+      "various initiatives",
+      "multiple vendors",
+      "numerous challenges",
+      "several executives",
+      "many projects",
+      "different systems",
+      "assorted technologies",
+      "diverse solutions",
+      "standard practices",
+      "typical approach",
+      "usual suspects",
+      "industry standard",
+      "common challenges",
+      "regular vendors"
+    ]
+  },
+  
+  "required_elements": {
+    "organization_foundation": [
+      "ceo_name",
+      "revenue_figures",
+      "employee_count",
+      "headquarters_location",
+      "ownership_structure"
+    ],
+    "strategic_context": [
+      "recent_news",
+      "competitive_position",
+      "market_challenges",
+      "strategic_priorities"
+    ],
+    "technical_infrastructure": [
+      "core_systems",
+      "cloud_providers",
+      "technology_initiatives",
+      "it_challenges"
+    ],
+    "security_intelligence": [
+      "security_posture",
+      "incident_history",
+      "compliance_requirements",
+      "threat_landscape"
+    ],
+    "vendor_ecosystem": [
+      "security_vendors",
+      "technology_vendors",
+      "procurement_process",
+      "vendor_challenges"
+    ],
+    "business_initiatives": [
+      "active_projects",
+      "investment_priorities",
+      "transformation_programs",
+      "budget_cycles"
+    ],
+    "engagement_strategy": [
+      "executive_approach",
+      "value_propositions",
+      "competitive_strategy",
+      "success_metrics"
+    ]
+  },
+  
+  "quality_indicators": {
+    "excellent": {
+      "specific_names": true,
+      "quantified_metrics": true,
+      "recent_dates": true,
+      "actionable_insights": true,
+      "unique_intelligence": true
+    },
+    "good": {
+      "mostly_specific": true,
+      "some_metrics": true,
+      "reasonable_currency": true,
+      "useful_content": true
+    },
+    "poor": {
+      "generic_content": true,
+      "few_specifics": true,
+      "outdated_info": true,
+      "limited_value": true
+    }
+  },
+  
+  "remediation_triggers": {
+    "immediate_fail": {
+      "template_count_exceeds": 0,
+      "quality_score_below": 8.5,
+      "data_points_below_minimum": true,
+      "critical_sections_missing": true
+    },
+    "requires_review": {
+      "quality_score_below": 9.0,
+      "currency_concerns": true,
+      "specificity_issues": true
+    },
+    "enhancement_needed": {
+      "quality_score_below": 9.5,
+      "data_density_low": true,
+      "actionability_concerns": true
+    }
+  },
+  
+  "validation_rules": {
+    "executive_validation": {
+      "must_have_full_name": true,
+      "must_have_title": true,
+      "should_have_tenure": true,
+      "should_have_background": true
+    },
+    "financial_validation": {
+      "must_have_revenue": true,
+      "should_have_growth_rate": true,
+      "should_have_multiple_years": true,
+      "must_include_currency": true
+    },
+    "vendor_validation": {
+      "must_have_vendor_names": true,
+      "should_have_products": true,
+      "should_have_deployment_info": true
+    },
+    "date_validation": {
+      "must_use_specific_dates": true,
+      "avoid_vague_timeframes": true,
+      "include_year_always": true
+    }
+  }
+}

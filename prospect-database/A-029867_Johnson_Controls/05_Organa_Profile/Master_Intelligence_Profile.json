@@ -1,0 +1,58 @@
+{
+  "company_name": "Johnson Controls",
+  "prospect_id": "A-029867_Johnson_Controls",
+  "last_updated": "2025-06-15T09:34:28.641331",
+  "completeness_score": 100.0,
+  "sector": "Industrial",
+  "data_sources": {
+    "internal_research": true,
+    "osint": true,
+    "threat_intelligence": true,
+    "regulatory_data": true
+  },
+  "deliverables": {
+    "existing": [
+      "Enhanced_Executive_Concierge",
+      "Regulatory_Compliance",
+      "GTM_Part2",
+      "MA_Due_Diligence",
+      "GTM_Part1",
+      "Local_Intelligence",
+      "Sector_Enhancement",
+      "Ransomware_Impact",
+      "GTM_Part3",
+      "Executive_Concierge",
+      "Threat_Landscape"
+    ],
+    "total": 11
+  },
+  "key_insights": {
+    "primary_threats": [
+      "Ransomware",
+      "OT Attacks",
+      "Insider Threats"
+    ],
+    "compliance_requirements": [
+      "NIST Framework",
+      "IEC 62443",
+      "Industry Standards"
+    ],
+    "technology_stack": [
+      "SCADA",
+      "Windows Server",
+      "Oracle",
+      "SAP"
+    ],
+    "decision_makers": [
+      "CIO",
+      "CISO",
+      "VP Operations",
+      "Director OT Security"
+    ]
+  },
+  "enhancement_notes": {
+    "research_files_found": 2,
+    "last_enhancement": "2025-06-15T09:34:28.641340",
+    "quality_score": 100
+  }
+}

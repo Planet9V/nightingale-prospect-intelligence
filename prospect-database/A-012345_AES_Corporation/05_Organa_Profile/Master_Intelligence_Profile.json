@@ -1,0 +1,49 @@
+{
+  "company_name": "AES Corporation",
+  "prospect_id": "A-012345_AES_Corporation",
+  "last_updated": "2025-06-15T09:34:28.636669",
+  "completeness_score": 18.181818181818183,
+  "sector": "Industrial",
+  "data_sources": {
+    "internal_research": true,
+    "osint": true,
+    "threat_intelligence": true,
+    "regulatory_data": true
+  },
+  "deliverables": {
+    "existing": [
+      "MA_Due_Diligence",
+      "Enhanced_Executive_Concierge"
+    ],
+    "total": 2
+  },
+  "key_insights": {
+    "primary_threats": [
+      "Ransomware",
+      "OT Attacks",
+      "Insider Threats"
+    ],
+    "compliance_requirements": [
+      "NIST Framework",
+      "IEC 62443",
+      "Industry Standards"
+    ],
+    "technology_stack": [
+      "SCADA",
+      "Windows Server",
+      "Oracle",
+      "SAP"
+    ],
+    "decision_makers": [
+      "CIO",
+      "CISO",
+      "VP Operations",
+      "Director OT Security"
+    ]
+  },
+  "enhancement_notes": {
+    "research_files_found": 2,
+    "last_enhancement": "2025-06-15T09:34:28.636676",
+    "quality_score": 28.181818181818183
+  }
+}

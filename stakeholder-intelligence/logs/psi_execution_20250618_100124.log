@@ -1,0 +1,20 @@
+2025-06-18 10:01:24,252 - PSIOrchestrator - INFO - Starting PSI processing
+2025-06-18 10:01:24,252 - BatchManager - INFO - Created batch: PSI-2025-06-18-002
+2025-06-18 10:01:24,252 - PSIOrchestrator - INFO - Created batch: PSI-2025-06-18-002
+2025-06-18 10:01:24,254 - PSIOrchestrator - INFO - Found 133 prospects to process
+2025-06-18 10:01:24,254 - PSIOrchestrator - INFO - Processing batch 1
+2025-06-18 10:01:24,277 - PSIOrchestrator - INFO - Processing batch 2
+2025-06-18 10:01:24,300 - PSIOrchestrator - INFO - Processing batch 3
+2025-06-18 10:01:24,321 - PSIOrchestrator - INFO - Processing batch 4
+2025-06-18 10:01:24,343 - PSIOrchestrator - INFO - Processing batch 5
+2025-06-18 10:01:24,358 - PSIOrchestrator - INFO - Processing batch 6
+2025-06-18 10:01:24,373 - PSIOrchestrator - INFO - Processing batch 7
+2025-06-18 10:01:24,388 - PSIOrchestrator - INFO - Processing batch 8
+2025-06-18 10:01:24,416 - PSIOrchestrator - INFO - Processing batch 9
+2025-06-18 10:01:24,436 - PSIOrchestrator - INFO - Processing batch 10
+2025-06-18 10:01:24,463 - PSIOrchestrator - INFO - Processing batch 11
+2025-06-18 10:01:24,492 - PSIOrchestrator - INFO - Processing batch 12
+2025-06-18 10:01:24,514 - PSIOrchestrator - INFO - Processing batch 13
+2025-06-18 10:01:24,527 - PSIOrchestrator - INFO - Processing batch 14
+2025-06-18 10:01:24,718 - OutputGenerator - ERROR - Failed to create Excel: 'email'
+2025-06-18 10:01:24,718 - PSIOrchestrator - ERROR - Processing failed: 'email'

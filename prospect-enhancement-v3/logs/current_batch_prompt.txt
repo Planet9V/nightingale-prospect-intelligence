@@ -1,0 +1,23 @@
+Process the following 10 prospects, creating all 7 standard files for each:
+
+1. A-020312_NXP_Semiconductors - NXP Semiconductors\n2. A-023123_BMW - BMW\n3. A-030734_Consumers_Energy - Consumers Energy\n4. A-022134_San_Francisco_International_Airport - San Francisco International Airport\n5. A-021654_Port_of_Long_Beach - Port of Long Beach\n6. A-153223_GE_Vernova_Energy - GE Vernova Energy\n7. A-067890_Crestron_Electronics - Crestron Electronics\n8. A-078901_Pepco_Holdings - Pepco Holdings\n9. A-089012_Southern_California_Edison - Southern California Edison\n10. A-090123_Duke_Energy - Duke Energy\n
+
+For each prospect:
+1. Check existing files in prospects/[PROSPECT_ID]/
+2. Create/update all 7 framework files:
+   - Organization_Foundation.md
+   - Strategic_Context.md
+   - Technical_Infrastructure.md
+   - Security_Intelligence.md
+   - Vendor_Ecosystem.md
+   - Business_Initiatives.md
+   - Engagement_Strategy.md
+3. Ensure 150+ data points per file
+4. Focus on cybersecurity relevance
+5. Use only real, current data (no templates)
+6. Update the tracker after each completion
+
+Target completion: 3 hours
+Quality target: 9.5+ for each prospect
+
+Begin with the first prospect and continue sequentially.

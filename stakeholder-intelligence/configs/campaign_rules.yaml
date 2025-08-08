@@ -1,0 +1,186 @@
+# Campaign Scoring Rules Configuration
+# Version 1.0
+
+# M&A Due Diligence Campaign
+m_a_campaign:
+  description: "Target financial decision makers for M&A cybersecurity due diligence"
+  
+  base_scores:
+    # Primary targets
+    "CFO": 100
+    "Chief Financial Officer": 100
+    "VP Finance": 85
+    "VP Corporate Development": 95
+    "VP Strategy": 90
+    "Director Corporate Development": 85
+    "Director M&A": 90
+    "General Counsel": 85
+    "Chief Legal Officer": 85
+    "Board Member": 80
+    "Chairman": 85
+    "Controller": 75
+    "Treasurer": 75
+    
+    # Secondary targets
+    "CEO": 85
+    "President": 85
+    "COO": 70
+    "VP Legal": 75
+    "Director Finance": 70
+    "VP Risk": 80
+    "Chief Risk Officer": 85
+    
+    # Default scores by role type
+    "C-Suite": 70
+    "VP Level": 60
+    "Director Level": 50
+    "Manager Level": 40
+    "Other": 30
+  
+  industry_adjustments:
+    "Private Equity":
+      "Partner": +20
+      "Managing Director": +15
+      "Principal": +10
+    
+    "Financial Services":
+      "CFO": +10
+      "Risk": +15
+    
+    "Healthcare":
+      "Compliance": +10
+      "Legal": +10
+    
+    "Manufacturing":
+      "Operations": +5
+      "Supply Chain": +10
+  
+  company_size_adjustments:
+    "Large": +10  # >$1B revenue
+    "Medium": +5   # $100M-$1B
+    "Small": 0     # <$100M
+  
+  recent_activity_boost:
+    "recent_acquisition": +15
+    "ipo_planned": +20
+    "pe_owned": +10
+
+# Ransomware Campaign
+ransomware_campaign:
+  description: "Target operational decision makers for ransomware protection"
+  
+  base_scores:
+    # Primary targets
+    "COO": 100
+    "Chief Operating Officer": 100
+    "CISO": 95
+    "Chief Information Security Officer": 95
+    "Chief Security Officer": 95
+    "CIO": 90
+    "Chief Information Officer": 90
+    "CTO": 90
+    "Chief Technology Officer": 90
+    "VP Operations": 85
+    "VP IT": 85
+    "VP Security": 90
+    "Director IT": 80
+    "Director Security": 85
+    "IT Manager": 75
+    "Security Manager": 80
+    
+    # Business continuity roles
+    "VP Business Continuity": 90
+    "Director Business Continuity": 85
+    "Crisis Manager": 85
+    "Emergency Response": 80
+    "Risk Manager": 80
+    
+    # Secondary targets
+    "CEO": 85
+    "CFO": 75
+    "Plant Manager": 80
+    "Facility Manager": 75
+    
+    # Default scores by role type
+    "C-Suite": 75
+    "VP Level": 70
+    "Director Level": 60
+    "Manager Level": 50
+    "Other": 30
+  
+  industry_adjustments:
+    "Healthcare":
+      "Chief Medical Officer": +20
+      "VP Clinical": +15
+      "Medical Director": +15
+    
+    "Manufacturing":
+      "Plant Manager": +20
+      "Production Manager": +15
+      "VP Manufacturing": +15
+    
+    "Energy & Utilities":
+      "Grid Operations": +20
+      "SCADA": +25
+      "OT": +20
+    
+    "Transportation":
+      "Safety": +15
+      "Fleet": +10
+    
+    "Financial Services":
+      "Trading": +15
+      "Operations": +10
+  
+  critical_infrastructure_boost:
+    - "Energy": +15
+    - "Water": +15
+    - "Healthcare": +20
+    - "Transportation": +15
+    - "Communications": +15
+    - "Financial Services": +10
+    - "Food & Agriculture": +10
+    - "Critical Manufacturing": +15
+    - "Chemical": +15
+  
+  operational_impact_factors:
+    "24/7 operations": +10
+    "customer_facing": +10
+    "production_critical": +15
+    "safety_critical": +20
+
+# Scoring algorithm parameters
+scoring_config:
+  max_score: 100
+  min_score: 0
+  
+  # Weights for different factors
+  weights:
+    base_score: 0.6
+    industry_adjustment: 0.2
+    company_factors: 0.1
+    special_circumstances: 0.1
+  
+  # Score interpretation
+  score_ranges:
+    "Priority 1": [90, 100]
+    "Priority 2": [75, 89]
+    "Priority 3": [60, 74]
+    "Priority 4": [40, 59]
+    "Priority 5": [0, 39]
+
+# Engagement approach mapping
+engagement_approaches:
+  m_a_campaign:
+    "CFO": "Financial risk quantification and valuation impact"
+    "Corp Dev": "Due diligence process enhancement"
+    "Legal": "Regulatory compliance and liability"
+    "Board": "Fiduciary responsibility and oversight"
+    "CEO": "Strategic risk management"
+  
+  ransomware_campaign:
+    "COO": "Operational resilience and continuity"
+    "CISO": "Technical threat landscape and solutions"
+    "CIO": "IT infrastructure protection"
+    "CEO": "Business impact and recovery"
+    "CFO": "Financial impact and insurance"

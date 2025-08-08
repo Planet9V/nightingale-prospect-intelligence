@@ -1,0 +1,55 @@
+{
+  "company_name": "Friesland Campina",
+  "prospect_id": "A-EMEA-20005_Friesland_Campina",
+  "last_updated": "2025-06-15T09:34:28.587297",
+  "completeness_score": 72.72727272727273,
+  "sector": "Industrial",
+  "data_sources": {
+    "internal_research": true,
+    "osint": true,
+    "threat_intelligence": true,
+    "regulatory_data": true
+  },
+  "deliverables": {
+    "existing": [
+      "Executive_Concierge",
+      "MA_Due_Diligence",
+      "Ransomware_Impact",
+      "Enhanced_Executive_Concierge",
+      "Local_Intelligence",
+      "Sector_Enhancement",
+      "Threat_Landscape",
+      "Regulatory_Compliance"
+    ],
+    "total": 8
+  },
+  "key_insights": {
+    "primary_threats": [
+      "Ransomware",
+      "OT Attacks",
+      "Insider Threats"
+    ],
+    "compliance_requirements": [
+      "NIST Framework",
+      "IEC 62443",
+      "Industry Standards"
+    ],
+    "technology_stack": [
+      "SCADA",
+      "Windows Server",
+      "Oracle",
+      "SAP"
+    ],
+    "decision_makers": [
+      "CIO",
+      "CISO",
+      "VP Operations",
+      "Director OT Security"
+    ]
+  },
+  "enhancement_notes": {
+    "research_files_found": 2,
+    "last_enhancement": "2025-06-15T09:34:28.587304",
+    "quality_score": 82.72727272727273
+  }
+}

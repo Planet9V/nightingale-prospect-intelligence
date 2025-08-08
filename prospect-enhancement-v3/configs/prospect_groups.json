@@ -1,0 +1,220 @@
+{
+  "priority_groups": {
+    "priority_1_complete": {
+      "status": "COMPLETE",
+      "description": "Critical gaps - Had only Executive Reports",
+      "count": 25,
+      "prospects": [
+        "A-112333_Redaptive_Inc",
+        "A-153007_Hyfluence_Systems_Corp",
+        "A-153223_GE_Vernova_Energy",
+        "A-150015_Neara_Power_Management",
+        "A-150020_New_Energy_Cooperative",
+        "A-150021_John_Deere_Company",
+        "A-150022_Land_O_Lakes_Inc",
+        "A-150023_American_Water_Works",
+        "A-019946_Engie",
+        "A-096235_Axpo_US_LLC",
+        "A-140902_Nature_Energy_Biogas",
+        "A-150007_Range_Resources_Corporation",
+        "A-150011_Constellation_Energy",
+        "A-150016_Archaea_Energy",
+        "A-150018_Caithness_Energy",
+        "A-022456_VDL_Group",
+        "A-021890_Tata_Steel",
+        "A-029952_Enza_Zaden",
+        "A-030287_Friesland_Campina",
+        "A-107329_Casper_Sleep_Inc",
+        "A-110753_PepsiCo_Beverages_Company",
+        "A-145234_Perdue_Farms_Inc",
+        "A-077145_Ford_Motor_Company",
+        "A-EMEA-20001_ASML_Holding_NV",
+        "A-008302_US_Sugar"
+      ]
+    },
+    
+    "priority_2_remaining": {
+      "status": "IN_PROGRESS",
+      "description": "Quick wins - Missing 1-7 files",
+      "count": 30,
+      "batch_1_zero_files": [
+        "A-020312_NXP_Semiconductors",
+        "A-023123_BMW",
+        "A-030734_Consumers_Energy",
+        "A-022134_San_Francisco_International_Airport",
+        "A-021654_Port_of_Long_Beach",
+        "A-153223_GE_Vernova_Energy"
+      ],
+      "batch_2_missing_one": [
+        "A-019866_Applied_Materials",
+        "A-014671_Spellman_High_Voltage",
+        "A-018829_Puget_Sound_Energy",
+        "A-067890_Crestron_Electronics",
+        "A-078901_Pepco_Holdings"
+      ],
+      "batch_3_various": [
+        "A-089012_Southern_California_Edison",
+        "A-090123_Duke_Energy",
+        "A-101234_Westlake_Chemical",
+        "A-112345_Maher_Terminals",
+        "A-123456_Ontario_Power_Generation"
+      ],
+      "batch_4_remaining": [
+        "A-134567_Chevron_USA",
+        "A-145678_Iroquois_Gas_Transmission",
+        "A-156789_Norfolk_Southern",
+        "A-167890_PacifiCorp",
+        "A-178901_WMATA"
+      ]
+    },
+    
+    "priority_3_templates": {
+      "status": "PENDING",
+      "description": "Template replacement - Have all files but templates",
+      "count": 63,
+      "energy_sector": [
+        "A-094599_Eversource_Energy",
+        "A-031125_CenterPoint_Energy",
+        "A-041234_NRG_Energy",
+        "A-052345_Southern_California_Edison",
+        "A-063456_Pacificorp",
+        "A-074567_Ontario_Power_Generation",
+        "A-085678_Kamo_Electric_Cooperative",
+        "A-096789_Exelon_Corporation"
+      ],
+      "manufacturing_sector": [
+        "A-012789_International_Paper",
+        "A-023890_US_Steel_Corporation",
+        "A-034901_Applied_Materials",
+        "A-045012_Analog_Devices",
+        "A-056123_BMW_Manufacturing",
+        "A-067234_John_Deere",
+        "A-078345_Halliburton"
+      ],
+      "transportation_sector": [
+        "A-089456_Norfolk_Southern",
+        "A-090567_Port_of_Long_Beach",
+        "A-101678_Maher_Terminals",
+        "A-112789_WMATA",
+        "A-123890_Port_of_San_Francisco"
+      ],
+      "food_agriculture": [
+        "A-134901_McDonalds_Corporation",
+        "A-145012_PepsiCo",
+        "A-156123_Land_O_Lakes",
+        "A-167234_Perdue_Farms",
+        "A-178345_US_Sugar"
+      ],
+      "technology_sector": [
+        "A-189456_Veson_Nautical",
+        "A-190567_Crestron_Electronics",
+        "A-201678_NXP_Semiconductors"
+      ]
+    }
+  },
+  
+  "processing_order": {
+    "immediate": [
+      "A-020312_NXP_Semiconductors",
+      "A-023123_BMW",
+      "A-030734_Consumers_Energy",
+      "A-022134_San_Francisco_International_Airport",
+      "A-021654_Port_of_Long_Beach"
+    ],
+    "next_batch": [
+      "A-153223_GE_Vernova_Energy",
+      "A-019866_Applied_Materials",
+      "A-014671_Spellman_High_Voltage",
+      "A-018829_Puget_Sound_Energy",
+      "A-067890_Crestron_Electronics"
+    ],
+    "following_batches": "See batch_3_various and batch_4_remaining in priority_2_remaining"
+  },
+  
+  "duplicate_handling": {
+    "duplicates_to_skip": {
+      "AES_Corporation": ["Keep A-012345 only"],
+      "BMW": ["Keep A-023123 only"],
+      "National_Fuel_Gas": ["Keep A-089134 only"],
+      "Pacificorp": ["Keep A-890123 only"],
+      "Eversource_Energy": ["Keep A-094599 only"],
+      "CenterPoint_Energy": ["Keep A-031125 only"],
+      "San_Francisco_International_Airport": ["Keep A-110670 only"],
+      "Vermont_Electric_Power": ["Keep A-022789 only"],
+      "International_Paper": ["Keep A-092145 only"]
+    }
+  },
+  
+  "sector_groupings": {
+    "energy_utilities": {
+      "count": 48,
+      "complexity": "high",
+      "common_challenges": [
+        "NERC CIP compliance",
+        "Grid modernization",
+        "Clean energy transition",
+        "OT/IT convergence"
+      ]
+    },
+    "manufacturing": {
+      "count": 35,
+      "complexity": "medium",
+      "common_challenges": [
+        "IP protection",
+        "Supply chain security",
+        "OT security",
+        "Global operations"
+      ]
+    },
+    "transportation": {
+      "count": 22,
+      "complexity": "high",
+      "common_challenges": [
+        "Critical infrastructure",
+        "TSA compliance",
+        "Physical security",
+        "Supply chain"
+      ]
+    },
+    "food_agriculture": {
+      "count": 15,
+      "complexity": "medium",
+      "common_challenges": [
+        "Food safety",
+        "Supply chain",
+        "Ransomware",
+        "Seasonal operations"
+      ]
+    },
+    "technology": {
+      "count": 9,
+      "complexity": "medium",
+      "common_challenges": [
+        "IP theft",
+        "Supply chain",
+        "Export controls",
+        "Third-party risk"
+      ]
+    }
+  },
+  
+  "special_handling": {
+    "high_priority_targets": [
+      "A-001457_Boeing",
+      "A-030734_Consumers_Energy",
+      "A-022134_San_Francisco_International_Airport",
+      "A-089134_National_Fuel_Gas_Distribution"
+    ],
+    "complex_organizations": [
+      "A-156789_Exelon_Energy",
+      "A-012345_AES_Corporation",
+      "A-023123_BMW",
+      "A-089012_Duke_Energy"
+    ],
+    "limited_public_info": [
+      "A-150015_Neara_Power_Management",
+      "A-153007_Hyfluence_Systems_Corp",
+      "A-140902_Nature_Energy_Biogas"
+    ]
+  }
+}

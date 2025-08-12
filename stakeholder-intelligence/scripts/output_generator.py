@@ -216,6 +216,10 @@ class OutputGenerator:
     
     def create_campaign_analysis(self, df: pd.DataFrame) -> pd.DataFrame:
         """Create campaign-specific analysis"""
+        # Ensure score columns are numeric, coercing errors to NaN
+        df['m_a_score'] = pd.to_numeric(df['m_a_score'], errors='coerce')
+        df['ransomware_score'] = pd.to_numeric(df['ransomware_score'], errors='coerce')
+
         # Top M&A targets
         m_a_top = df.nlargest(20, 'm_a_score')[
             ['company_name', 'full_name', 'title', 'm_a_score', 'm_a_rationale']

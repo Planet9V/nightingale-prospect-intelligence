@@ -49,7 +49,7 @@ class PSIOrchestrator:
         
         # Default configuration
         return {
-            'prospects_dir': '/root/Desktop/project_nightingale_workspace/project_nightingale/prospects',
+            'prospects_dir': Path(__file__).parent.parent.parent / 'prospect-database',
             'output_dir': Path(__file__).parent.parent / 'outputs',
             'parallel_agents': 8,
             'enrichment_enabled': True,

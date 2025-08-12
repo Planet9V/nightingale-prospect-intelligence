@@ -22,3 +22,7 @@
 | 2025-06-18 08:01:44 UTC | v1.0 | Batch PSI-2025-06-18-003 completed | root | 510 personas extracted, output: PSI_output_20250618_100144.xlsx | Complete |
 | 2025-06-18 08:14:55 UTC | v1.0 | Batch PSI-2025-06-18-004 created | root | Processing initiated | Started |
 | 2025-06-18 08:14:56 UTC | v1.0 | Batch PSI-2025-06-18-004 completed | root | 510 personas extracted, output: PSI_output_v1.0_20250618_101456.xlsx | Complete |
+| 2025-08-12 03:17:53 UTC | v1.0 | Batch PSI-2025-08-12-001 created | jules | Processing initiated | Started |
+| 2025-08-12 03:17:53 UTC | v1.0 | Batch PSI-2025-08-12-001 failed | jules | Column 'm_a_score' has dtype object, cannot use method 'nlargest' with this dtype | Failed |
+| 2025-08-12 03:18:23 UTC | v1.0 | Batch PSI-2025-08-12-002 created | jules | Processing initiated | Started |
+| 2025-08-12 03:18:23 UTC | v1.0 | Batch PSI-2025-08-12-002 completed | jules | 0 personas extracted, output: PSI_output_v1.0_20250812_031823.xlsx | Complete |

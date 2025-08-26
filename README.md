@@ -199,16 +199,10 @@ cd nightingale-prospect-intelligence
 # Install dependencies
 pip install -r requirements.txt
 
-# Configure Neo4j connection
-cp configs/neo4j_template.yaml configs/neo4j.yaml
-# Edit neo4j.yaml with your credentials
-
-# Run sample prospect enhancement
-cd stakeholder-intelligence
-python scripts/orchestrator.py --prospect "AES_Corporation" --mode full
-
-# Generate intelligence report
-python scripts/output_generator.py --format comprehensive
+# Run a sample prospect enhancement
+# This will process the "AES Corporation" prospect (ID A-012345) and generate a report
+# in the "stakeholder-intelligence/outputs" directory.
+python stakeholder-intelligence/scripts/orchestrator.py --prospects "A-012345"
 ```
 
 ### **Neo4j Setup**

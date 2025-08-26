@@ -1,0 +1,8 @@
+2025-08-12 03:18:23,194 - PSIOrchestrator - INFO - Starting PSI processing
+2025-08-12 03:18:23,195 - BatchManager - INFO - Created batch: PSI-2025-08-12-002
+2025-08-12 03:18:23,195 - PSIOrchestrator - INFO - Created batch: PSI-2025-08-12-002
+2025-08-12 03:18:23,196 - PSIOrchestrator - INFO - Found 1 prospects to process
+2025-08-12 03:18:23,196 - PSIOrchestrator - INFO - Processing batch 1
+2025-08-12 03:18:23,288 - OutputGenerator - INFO - Excel file created: /app/stakeholder-intelligence/outputs/PSI_output_v1.0_20250812_031823.xlsx
+2025-08-12 03:18:23,291 - OutputGenerator - INFO - CSV file created: /app/stakeholder-intelligence/outputs/PSI_output_v1.0_20250812_031823.csv
+2025-08-12 03:18:23,292 - PSIOrchestrator - INFO - Processing complete. Output: /app/stakeholder-intelligence/outputs/PSI_output_v1.0_20250812_031823.xlsx

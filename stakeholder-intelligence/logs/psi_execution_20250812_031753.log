@@ -1,0 +1,7 @@
+2025-08-12 03:17:53,780 - PSIOrchestrator - INFO - Starting PSI processing
+2025-08-12 03:17:53,782 - BatchManager - INFO - Created batch: PSI-2025-08-12-001
+2025-08-12 03:17:53,782 - PSIOrchestrator - INFO - Created batch: PSI-2025-08-12-001
+2025-08-12 03:17:53,782 - PSIOrchestrator - INFO - Found 1 prospects to process
+2025-08-12 03:17:53,782 - PSIOrchestrator - INFO - Processing batch 1
+2025-08-12 03:17:53,865 - OutputGenerator - ERROR - Failed to create Excel: Column 'm_a_score' has dtype object, cannot use method 'nlargest' with this dtype
+2025-08-12 03:17:53,865 - PSIOrchestrator - ERROR - Processing failed: Column 'm_a_score' has dtype object, cannot use method 'nlargest' with this dtype

@@ -100,7 +100,11 @@ class PSIOrchestrator:
                 
                 # Enrichment phase (if enabled)
                 if self.config['enrichment_enabled']:
-                    extraction_results = await self.parallel_enrichment(extraction_results)
+                    try:
+                        extraction_results = await self.parallel_enrichment(extraction_results)
+                    except ValueError as e:
+                        self.logger.warning(f"Could not initialize EnrichmentAgent: {e}. Skipping enrichment phase.")
+                        self.config['enrichment_enabled'] = False
                 
                 # Campaign scoring
                 scored_results = await self.campaign_scoring(extraction_results)

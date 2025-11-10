@@ -1,0 +1,10 @@
+2025-08-26 19:40:44,680 - PSIOrchestrator - INFO - Starting PSI processing
+2025-08-26 19:40:44,681 - BatchManager - INFO - Created batch: PSI-2025-08-26-003
+2025-08-26 19:40:44,681 - PSIOrchestrator - INFO - Created batch: PSI-2025-08-26-003
+2025-08-26 19:40:44,681 - PSIOrchestrator - INFO - Found 1 prospects to process
+2025-08-26 19:40:44,681 - PSIOrchestrator - INFO - Processing batch 1
+2025-08-26 19:40:44,684 - EnrichmentAgent - ERROR - PERPLEXITY_API_KEY environment variable not set.
+2025-08-26 19:40:44,684 - PSIOrchestrator - WARNING - Could not initialize EnrichmentAgent: PERPLEXITY_API_KEY is required for the EnrichmentAgent.. Skipping enrichment phase.
+2025-08-26 19:40:44,819 - OutputGenerator - INFO - Excel file created: /app/stakeholder-intelligence/outputs/PSI_output_v1.0_20250826_194044.xlsx
+2025-08-26 19:40:44,822 - OutputGenerator - INFO - CSV file created: /app/stakeholder-intelligence/outputs/PSI_output_v1.0_20250826_194044.csv
+2025-08-26 19:40:44,823 - PSIOrchestrator - INFO - Processing complete. Output: /app/stakeholder-intelligence/outputs/PSI_output_v1.0_20250826_194044.xlsx

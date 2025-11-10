@@ -98,6 +98,7 @@ Format: `PSI-YYYY-MM-DD-XXX`
 #### Notes:
 - Processing started
 
+- ERROR: PERPLEXITY_API_KEY is required for the EnrichmentAgent.
 - ERROR: Column 'm_a_score' has dtype object, cannot use method 'nlargest' with this dtype
 - ERROR: 'email'
 ---
@@ -142,6 +143,7 @@ Format: `PSI-YYYY-MM-DD-XXX`
 #### Notes:
 - Processing started
 
+- ERROR: PERPLEXITY_API_KEY is required for the EnrichmentAgent.
 - ERROR: Column 'm_a_score' has dtype object, cannot use method 'nlargest' with this dtype
 ---
 
@@ -185,6 +187,7 @@ Format: `PSI-YYYY-MM-DD-XXX`
 #### Notes:
 - Processing started
 
+- ERROR: PERPLEXITY_API_KEY is required for the EnrichmentAgent.
 - ERROR: Column 'm_a_score' has dtype object, cannot use method 'nlargest' with this dtype
 ---
 
@@ -228,6 +231,7 @@ Format: `PSI-YYYY-MM-DD-XXX`
 #### Notes:
 - Processing started
 
+- ERROR: PERPLEXITY_API_KEY is required for the EnrichmentAgent.
 - ERROR: Column 'm_a_score' has dtype object, cannot use method 'nlargest' with this dtype
 ---
 
@@ -271,12 +275,99 @@ Format: `PSI-YYYY-MM-DD-XXX`
 #### Notes:
 - Processing started
 
+- ERROR: PERPLEXITY_API_KEY is required for the EnrichmentAgent.
 ---
 
 ### Batch ID: PSI-2025-08-26-001
 - **Version**: v1.0
 - **Status**: Complete
 - **Start Time**: 2025-08-26 19:33:39
+- **End Time**: TBD
+- **Operator**: jules
+- **Prospects Targeted**: TBD
+- **Configuration**:
+  - Campaigns: M&A Due Diligence, Ransomware
+  - Enrichment: Enabled
+  - Parallel Agents: 8
+
+#### Task Checklist:
+- [x] Environment verification complete
+- [x] MCP services verified
+- [x] Prospect folders accessible
+- [x] Batch initialized
+- [ ] Extraction phase started
+- [ ] Extraction phase completed
+- [ ] Enrichment phase started
+- [ ] Enrichment phase completed
+- [ ] Scoring phase started
+- [ ] Scoring phase completed
+- [ ] Output generation started
+- [ ] Output validation complete
+- [ ] Files delivered to outputs/
+- [ ] Activity ledger updated
+- [ ] Stakeholders notified
+
+#### Metrics:
+- Prospects Processed: 0/1
+- Personas Extracted: 0
+- Enrichment Success Rate: 0%
+- Processing Time: 0 minutes
+- Errors Encountered: 0
+- Data Quality Score: 0%
+
+#### Notes:
+- Processing started
+
+- ERROR: PERPLEXITY_API_KEY is required for the EnrichmentAgent.
+---
+
+### Batch ID: PSI-2025-08-26-002
+- **Version**: v1.0
+- **Status**: Failed
+- **Start Time**: 2025-08-26 19:40:17
+- **End Time**: TBD
+- **Operator**: jules
+- **Prospects Targeted**: TBD
+- **Configuration**:
+  - Campaigns: M&A Due Diligence, Ransomware
+  - Enrichment: Enabled
+  - Parallel Agents: 8
+
+#### Task Checklist:
+- [x] Environment verification complete
+- [x] MCP services verified
+- [x] Prospect folders accessible
+- [x] Batch initialized
+- [ ] Extraction phase started
+- [ ] Extraction phase completed
+- [ ] Enrichment phase started
+- [ ] Enrichment phase completed
+- [ ] Scoring phase started
+- [ ] Scoring phase completed
+- [ ] Output generation started
+- [ ] Output validation complete
+- [ ] Files delivered to outputs/
+- [ ] Activity ledger updated
+- [ ] Stakeholders notified
+
+#### Metrics:
+- Prospects Processed: 0/TBD
+- Personas Extracted: 0
+- Enrichment Success Rate: 0%
+- Processing Time: 0 minutes
+- Errors Encountered: 0
+- Data Quality Score: 0%
+
+#### Notes:
+- Processing started
+
+- ERROR: PERPLEXITY_API_KEY is required for the EnrichmentAgent.
+---
+
+### Batch ID: PSI-2025-08-26-003
+- **Version**: v1.0
+- **Status**: Complete
+- **Start Time**: 2025-08-26 19:40:44
 - **End Time**: TBD
 - **Operator**: jules
 - **Prospects Targeted**: TBD

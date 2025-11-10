@@ -1,0 +1,7 @@
+2025-08-26 19:40:17,086 - PSIOrchestrator - INFO - Starting PSI processing
+2025-08-26 19:40:17,087 - BatchManager - INFO - Created batch: PSI-2025-08-26-002
+2025-08-26 19:40:17,088 - PSIOrchestrator - INFO - Created batch: PSI-2025-08-26-002
+2025-08-26 19:40:17,088 - PSIOrchestrator - INFO - Found 1 prospects to process
+2025-08-26 19:40:17,088 - PSIOrchestrator - INFO - Processing batch 1
+2025-08-26 19:40:17,094 - EnrichmentAgent - ERROR - PERPLEXITY_API_KEY environment variable not set.
+2025-08-26 19:40:17,095 - PSIOrchestrator - ERROR - Processing failed: PERPLEXITY_API_KEY is required for the EnrichmentAgent.

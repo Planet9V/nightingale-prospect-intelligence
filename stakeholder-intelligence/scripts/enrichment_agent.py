@@ -1,163 +1,125 @@
 #!/usr/bin/env python3
 """
 Enrichment Agent for PSI System
-Handles data enrichment using MCP services
+Handles data enrichment using the Perplexity API
 """
 
 import asyncio
 import logging
+import os
 import re
-import random
+from openai import OpenAI
 from typing import Dict, Optional
 
 class EnrichmentAgent:
-    """Agent responsible for enriching personas with additional data"""
+    """Agent responsible for enriching personas with additional data via Perplexity."""
     
     def __init__(self, shared_scratchpad: dict):
         self.scratchpad = shared_scratchpad
         self.logger = logging.getLogger('EnrichmentAgent')
         self.enrichment_cache = self.scratchpad.get('enrichment_cache', {})
-    
-    async def enrich_persona(self, persona: Dict) -> Dict:
-        """Enrich a single persona with additional data"""
+
+        # Initialize Perplexity API client
+        api_key = os.environ.get("PERPLEXITY_API_KEY")
+        if not api_key:
+            self.logger.error("PERPLEXITY_API_KEY environment variable not set.")
+            raise ValueError("PERPLEXITY_API_KEY is required for the EnrichmentAgent.")
+            
+        self.client = OpenAI(api_key=api_key, base_url="https://api.perplexity.ai")
+
+    async def _call_perplexity_api(self, prompt: str) -> Optional[str]:
+        """Sends a prompt to the Perplexity API and returns the response."""
         try:
-            # Check cache first
-            cache_key = f"{persona['full_name']}_{persona['company_name']}"
-            if cache_key in self.enrichment_cache:
-                cached_data = self.enrichment_cache[cache_key]
-                persona.update(cached_data)
-                return persona
-            
-            enriched_data = {}
-            
-            # Generate potential email
-            if not persona.get('email'):
-                email = self.generate_email(persona['full_name'], persona['company_name'])
-                if email:
-                    enriched_data['email'] = email
-                    enriched_data['email_confidence'] = random.uniform(0.5, 0.8)
-            
-            # Generate LinkedIn URL pattern
-            if not persona.get('linkedin'):
-                linkedin = self.generate_linkedin(persona['full_name'], persona['company_name'])
-                if linkedin:
-                    enriched_data['linkedin'] = linkedin
-                    enriched_data['linkedin_confidence'] = random.uniform(0.4, 0.7)
-
-            # Generate placeholder phone number
-            if not persona.get('phone'):
-                phone = self.generate_phone_number(persona.get('headquarters', ''))
-                if phone:
-                    enriched_data['phone'] = phone
-
-            # Add enrichment timestamp
-            enriched_data['enrichment_attempted'] = True
-            
-            # Cache the enrichment
-            self.enrichment_cache[cache_key] = enriched_data
-            
-            # Update persona
-            persona.update(enriched_data)
-            
-            return persona
-            
+            self.logger.info(f"Querying Perplexity API for: {prompt[:100]}...")
+            response = self.client.chat.completions.create(
+                model="llama-3-sonar-large-32k-online",
+                messages=[{"role": "user", "content": prompt}],
+            )
+            content = response.choices[0].message.content
+            self.logger.info("Successfully received response from Perplexity API.")
+            return content
         except Exception as e:
-            self.logger.error(f"Enrichment failed for {persona.get('full_name')}: {str(e)}")
-            persona['enrichment_attempted'] = False
+            self.logger.error(f"Perplexity API call failed: {e}")
+            return None
+
+    def _construct_prompt(self, full_name: str, company_name: str) -> str:
+        """Constructs a detailed prompt for the Perplexity API."""
+        return (
+            f"As an expert research analyst, please find and consolidate publicly available professional information for '{full_name}', "
+            f"who is associated with the company '{company_name}'. Focus on details relevant to a business-to-business sales context. "
+            "I am looking for the following specific details:\n"
+            "- Official Job Title\n"
+            "- Corporate Email Address (if publicly available)\n"
+            "- Corporate Direct-Dial Phone Number (if publicly available)\n"
+            "- LinkedIn Profile URL\n"
+            "- A brief summary of their key responsibilities and professional background.\n\n"
+            "Please structure the output clearly with labels for each piece of information. If a piece of information is not found, please state 'Not Found'."
+        )
+
+    async def enrich_persona(self, persona: Dict) -> Dict:
+        """Enriches a single persona by querying the Perplexity API."""
+        full_name = persona.get('full_name', '')
+        company_name = persona.get('company_name', '')
+
+        if not full_name or not company_name:
+            self.logger.warning("Persona is missing full_name or company_name, skipping enrichment.")
             return persona
-    
-    def generate_email(self, full_name: str, company_name: str) -> Optional[str]:
-        """Generate potential email address with more variety"""
-        try:
-            name_parts = full_name.strip().lower().split()
-            if len(name_parts) < 2:
-                return None
-            
-            fname = name_parts[0]
-            lname = name_parts[-1]
-            finitial = fname[0]
-            
-            domain = self.generate_domain(company_name)
-            if not domain:
-                return None
-            
-            patterns = [
-                f"{fname}.{lname}@{domain}",
-                f"{finitial}{lname}@{domain}",
-                f"{fname}{lname}@{domain}",
-                f"{fname}@{domain}",
-                f"{lname}@{domain}",
-                f"{fname}_{lname}@{domain}",
-                f"{finitial}.{lname}@{domain}"
-            ]
-            
-            return random.choice(patterns)
-            
-        except Exception:
-            return None
-    
-    def generate_domain(self, company_name: str) -> Optional[str]:
-        """Generate likely domain from company name"""
-        clean_name = company_name.lower()
-        
-        suffixes = [
-            ' corporation', ' corp', ' incorporated', ' inc', ' company', ' co',
-            ' llc', ' ltd', ' limited', ' group', ' international', ' technologies',
-            ' systems', ' solutions', ' services', ' plc', ' ag', ' & co'
-        ]
-        
-        for suffix in suffixes:
-            clean_name = clean_name.replace(suffix, '')
-        
-        clean_name = re.sub(r'[^a-z0-9]', '', clean_name.strip())
-        
-        if not clean_name:
-            return None
-        
-        return f"{clean_name}.com"
-    
-    def generate_linkedin(self, full_name: str, company_name: str) -> Optional[str]:
-        """Generate potential LinkedIn URL with more variety"""
-        try:
-            name_parts = full_name.strip().lower().split()
-            if len(name_parts) < 2:
-                return None
 
-            fname = name_parts[0]
-            lname = name_parts[-1]
-            
-            # Clean company name for path
-            company_path = re.sub(r'[^a-z0-9]', '', company_name.lower())
+        cache_key = f"{full_name}_{company_name}"
+        if cache_key in self.enrichment_cache:
+            self.logger.info(f"Found in cache. Skipping API call for {full_name}.")
+            persona.update(self.enrichment_cache[cache_key])
+            return persona
 
-            patterns = [
-                f"linkedin.com/in/{fname}-{lname}",
-                f"linkedin.com/in/{fname}{lname}{random.randint(1, 99)}",
-                f"linkedin.com/in/{lname}-{fname}",
-                f"pub/{fname}-{lname}/a{random.randint(1,9)}/{random.randint(10,99)}/{random.randint(100,999)}"
-            ]
-            
-            return random.choice(patterns)
-            
-        except Exception:
-            return None
-
-    def generate_phone_number(self, location: str) -> Optional[str]:
-        """Generate a plausible placeholder US phone number"""
-        # Simple area code logic (can be expanded)
-        area_codes = ['212', '415', '312', '202', '617', '713'] # NY, SF, CHI, DC, BOS, HOU
-        if 'new york' in location.lower():
-            area_code = '212'
-        elif 'san francisco' in location.lower():
-            area_code = '415'
-        else:
-            area_code = random.choice(area_codes)
-            
-        exchange = f"{random.randint(200, 999)}"
-        subscriber = f"{random.randint(1000, 9999):04d}"
+        prompt = self._construct_prompt(full_name, company_name)
         
-        return f"({area_code}) {exchange}-{subscriber}"
+        # For this re-architecture step, we are not yet parsing the response.
+        # We are just making the call and will add parsing in the next step.
+        # In a real run, this would be a live API call. For testing in an environment
+        # without an API key, this call will fail gracefully.
+        api_response = await self._call_perplexity_api(prompt)
+
+        enriched_data = {
+            'enrichment_attempted': True,
+            'api_response_raw': api_response # Storing raw response for now
+        }
+
+        # Parse the API response to extract structured data
+        if api_response:
+            parsed_data = self._parse_api_response(api_response)
+            enriched_data.update(parsed_data)
+        
+        self.enrichment_cache[cache_key] = enriched_data
+        persona.update(enriched_data)
+        
+        return persona
+
+    def _parse_api_response(self, response_text: str) -> Dict[str, str]:
+        """Parses the raw text response from the API to extract key details."""
+        parsed_data = {}
+
+        # Regex to find a label and capture the text on the same line until the end
+        def extract_value(label):
+            pattern = re.compile(f"^{label}\\s*:\\s*(.*)$", re.MULTILINE | re.IGNORECASE)
+            match = pattern.search(response_text)
+            if match:
+                value = match.group(1).strip()
+                return value if value.lower() != 'not found' else ""
+            return ""
+
+        parsed_data['title'] = extract_value("Official Job Title")
+        parsed_data['email'] = extract_value("Corporate Email Address")
+        parsed_data['phone'] = extract_value("Corporate Direct-Dial Phone Number")
+        parsed_data['linkedin'] = extract_value("LinkedIn Profile URL")
+        
+        # For the summary, we'll take a more broad approach
+        summary_match = re.search(r"summary of their key responsibilities.*?:\n(.*?)(?=\n\n|\Z)", response_text, re.DOTALL | re.IGNORECASE)
+        if summary_match:
+            parsed_data['summary'] = summary_match.group(1).strip()
+
+        return parsed_data
 
     async def batch_enrich(self, personas: list) -> list:
-        """Enrich multiple personas efficiently"""
+        """Enrich multiple personas efficiently."""
         tasks = [self.enrich_persona(p) for p in personas]
         return await asyncio.gather(*tasks)

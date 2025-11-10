@@ -28,3 +28,7 @@
 | 2025-08-12 03:18:23 UTC | v1.0 | Batch PSI-2025-08-12-002 completed | jules | 0 personas extracted, output: PSI_output_v1.0_20250812_031823.xlsx | Complete |
 | 2025-08-26 19:33:39 UTC | v1.0 | Batch PSI-2025-08-26-001 created | jules | Processing initiated | Started |
 | 2025-08-26 19:33:39 UTC | v1.0 | Batch PSI-2025-08-26-001 completed | jules | 0 personas extracted, output: PSI_output_v1.0_20250826_193339.xlsx | Complete |
+| 2025-08-26 19:40:17 UTC | v1.0 | Batch PSI-2025-08-26-002 created | jules | Processing initiated | Started |
+| 2025-08-26 19:40:17 UTC | v1.0 | Batch PSI-2025-08-26-002 failed | jules | PERPLEXITY_API_KEY is required for the EnrichmentAgent. | Failed |
+| 2025-08-26 19:40:44 UTC | v1.0 | Batch PSI-2025-08-26-003 created | jules | Processing initiated | Started |
+| 2025-08-26 19:40:44 UTC | v1.0 | Batch PSI-2025-08-26-003 completed | jules | 0 personas extracted, output: PSI_output_v1.0_20250826_194044.xlsx | Complete |
